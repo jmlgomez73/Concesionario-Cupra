@@ -1,0 +1,53 @@
+application: consesionariocupra
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /assets
+  static_dir: assets
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /
+  script: handlers.main.app
+
+- url: /coches/crear
+  script: handlers.coches.crear.app
+
+- url: /coches/modificar
+  script: handlers.coches.modificar.app
+
+- url: /coches/listado
+  script: handlers.coches.listado.app
+
+- url: /coches/borrar
+  script: handlers.coches.borrar.app
+
+- url: /configuracion/configurar
+  script: handlers.configuracion.configurar.app
+
+- url: /configuracion/listado_user
+  script: handlers.configuracion.listado_user.app
+
+- url: /configuracion/modificar
+  script: handlers.configuracion.modificar.app
+
+- url: /configuracion/borrar
+  script: handlers.configuracion.borrar.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: "latest"

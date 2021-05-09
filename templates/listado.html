@@ -1,0 +1,31 @@
+{% include "admin.html" %}
+      <div class="container-fluid container">
+         <div class="container-fluid mt-5">
+            <div class="container">
+               <div class="row">
+                  {% if coches.count() > 0 %} {% for coche in coches %}
+                  <div class="col-sm pb-3">
+                     <div class="card bg-light mr-3 text-center" style="width: 13rem;">
+                        <div><img class="img-fluid" src="../assets/{{coche.foto}}" /></div>
+                        <div class="card-block">
+                           <h4 class="card-title">{{ coche.modelo }} {{coche.ano}}</h4>
+                           <p class="card-text">Motor: {{coche.motor}}</p>
+                           <p class="card-text">CV: {{coche.cv}} CV</p>
+                           <p class="card-text"><b>Desde {{ coche.precio|int }} €</b></p>
+                           <a href="/coches/modificar?key={{ coche.key.urlsafe() }}">
+                           <button type="button" class="btn btn-outline-primary mb-2 ">Modificar</button>
+                           </a>
+                           <a href="/coches/borrar?key={{ coche.key.urlsafe() }}">
+                           <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %} {% else %}
+                  <p><b>No hay coches todavía</b></p>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+{% include "footer.html" %}

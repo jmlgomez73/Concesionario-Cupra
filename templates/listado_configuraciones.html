@@ -1,0 +1,117 @@
+{% if admin == True %}
+   {% include "admin.html" %}
+{% else %}
+   {% include "user.html" %}
+{% endif %}
+      <div class="container-fluid container">
+         <div class="container-fluid mt-5">
+            <div class="container">
+               <div class="row">
+                  {% if extras|length > 0 %}
+                  {% for n in range(extras|length) %}
+                  <div class="col-sm ">
+                     <div class="card bg-light  text-center" style="width: 23rem;">
+                        <div><img class="img-fluid" src="../assets/{{coches[n].foto}}" /></div>
+                        <div class="card-block ">
+                           <h4 class="card-title">{{ coches[n].modelo }} {{coches[n].ano}}</h4>
+                           <p class="card-text">Motor: {{coches[n].motor}}</p>
+                           <p class="card-text">CV: {{coches[n].cv}} CV</p>
+                           <p class="card-text"><b>Precio Base: {{ coches[n].precio|int }} €</b></p>
+                           <h4 class="card-title">Extras</h4>
+                           {% if extras[n].aire == True %}
+                           <div class="row">
+                              <div class="col-7">
+                                 <div class="checkbox">
+                                    <p class="card-text">Aire Acondicionado</p>
+                                 </div>
+                              </div>
+                              <div class="col-5">
+                                 <p class="card-text">Precio: 130 €</p>
+                              </div>
+                           </div>
+                           </br>
+                           {% endif %}
+                           {% if extras[n].rueda == True %}
+                           <div class="row">
+                              <div class="col-7">
+                                 <div class="checkbox">
+                                    <p class="card-text">Rueda de repuesto</p>
+                                 </div>
+                              </div>
+                              <div class="col-5">
+                                 <p class="card-text">Precio: 45 €</p>
+                              </div>
+                           </div>
+                           </br>
+                           {% endif %}
+                           {% if extras[n].android == True %}
+                           <div class="row">
+                              <div class="col-7">
+                                 <div class="checkbox">
+                                    <p class="card-text">Android Auto</p>
+                                 </div>
+                              </div>
+                              <div class="col-5">
+                                 <p class="card-text">Precio: 220 €</p>
+                              </div>
+                           </div>
+                           </br>
+                           {% endif %}
+                           {% if extras[n].camara == True %}
+                           <div class="row">
+                              <div class="col-7">
+                                 <div class="checkbox">
+                                    <p class="card-text">Cámara de visión trasera</p>
+                                 </div>
+                              </div>
+                              <div class="col-5">
+                                 <p class="card-text">Precio: 291 €</p>
+                              </div>
+                           </div>
+                           </br>
+                           {% endif %}
+                           {% if extras[n].techo == True %}
+                           <div class="row">
+                              <div class="col-7">
+                                 <div class="checkbox">
+                                    <p class="card-text">Techo panoramico</p>
+                                 </div>
+                              </div>
+                              <div class="col-5">
+                                 <p class="card-text">Precio: 1.393 €</p>
+                              </div>
+                           </div>
+                           </br>
+                           {% endif %}
+                           {% if extras[n].sonido == True %}
+                           <div class="row">
+                              <div class="col-7">
+                                 <div class="checkbox">
+                                    <p class="card-text">Sistema de sonido BEATS Audio System</p>
+                                 </div>
+                              </div>
+                              <div class="col-5">
+                                 <p class="card-text">Precio: 540 €</p>
+                              </div>
+                           </div>
+                           </br>
+                           {% endif %}
+                           <p class="card-text"><b>Precio Total: {{ extras[n].total|int }} €</b></p>
+                           <a href="/configuracion/modificar?id_extra={{ extras[n].key.urlsafe() }}">
+                           <button type="button" class="btn btn-outline-primary mb-2 ">Modificar Configuración</button>
+                           </a>
+                           <a href="/configuracion/borrar?id_extra={{ extras[n].key.urlsafe() }}">
+                           <button type="button" class="btn btn-outline-danger">Borrar Configuración</button>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+                  {% else %}
+                  <p><b>No hay configuraciones todavía</b></p>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+{% include "footer.html" %}

@@ -1,0 +1,108 @@
+{% if admin == True %}
+   {% include "admin.html" %}
+{% else %}
+   {% include "user.html" %}
+{% endif %}
+      <div class="container-fluid container">
+         <div class="container-fluid mt-5">
+            <form id="formModelo"
+               action="/configuracion/configurar?key={{ coche.key.urlsafe() }}"
+               method="post"
+               enctype="multipart/form-data"
+               onsubmit="return check()">
+               <img class="card-img-top img-fluid" src="../assets/{{coche.foto}}" />
+               <h1 class="text-center mt-3">Ficha Técnica</h1>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1>Modelo</h1>
+               <h5>{{coche.modelo}}</h5>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1>Año</h1>
+               <h5>{{coche.ano}}</h5>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1>CV</h1>
+               <h5>{{coche.cv}}</h5>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1>Motor</h1>
+               <h5>{{coche.motor}}</h5>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1>Precio Base</h1>
+               <h5>{{coche.precio}} €</h5>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1 class="text-center">Extras</h1>
+               <h4 class="text-center">Seleccione las extras que desee y obtenga su presupuesto</h4>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-8">
+                        <div class="checkbox">
+                           <label class="h3 mb-3"><input onClick="if (this.checked) sumar(this.id); else restar(this.id)"  id="edAire" name="edAire" type="checkbox" value="True"> Aire Acondicionado</label>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <label class="h3 mb-3">Precio: 130 €</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-8">
+                        <div class="checkbox">
+                           <label class="h3 mb-3"><input onClick="if (this.checked) sumar(this.id); else restar(this.id)" id="edRueda" name="edRueda" type="checkbox" value="True"> Rueda de repuesto</label>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <label class="h3 mb-3">Precio: 45 €</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-8">
+                        <div class="checkbox">
+                           <label class="h3 mb-3"><input onClick="if (this.checked) sumar(this.id); else restar(this.id)" id="edAndroid" name="edAndroid" type="checkbox" value="True"> Android Auto</label>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <label class="h3 mb-3">Precio: 220 €</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-8">
+                        <div class="checkbox">
+                           <label class="h3 mb-3"><input onClick="if (this.checked) sumar(this.id); else restar(this.id)" id="edCamara" name="edCamara" type="checkbox" value="True"> Cámara de visión trasera</label>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <label class="h3 mb-3">Precio: 291 €</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-8">
+                        <div class="checkbox">
+                           <label class="h3 mb-3"><input onClick="if (this.checked) sumar(this.id); else restar(this.id)" id="edTecho" name="edTecho" type="checkbox" value="True"> Techo panoramico</label>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <label class="h3 mb-3">Precio: 1.393 €</label>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-8">
+                        <div class="checkbox">
+                           <label class="h3 mb-3"><input onClick="if (this.checked) sumar(this.id); else restar(this.id)" id="edSonido" name="edSonido" type="checkbox" value="True"> Sistema de sonido BEATS Audio System</label>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <label class="h3 mb-3">Precio: 540 €</label>
+                     </div>
+                  </div>
+               </div>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <h1 class="text-center">Total</h1>
+               <div class="col text-center">
+                  <input class="text-center" readonly type="text" name="total" id="total" value="{{coche.precio|int}}">
+               </div>
+               <hr style="width:100%;border-bottom: 3px solid blue;">
+               <div class="col text-center">
+                  <input type="submit" class="btn btn-outline-primary" value="Guardar Configuracion"/>
+               </div>
+            </form>
+         </div>
+      </div>
+{% include "footer.html" %}

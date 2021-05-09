@@ -1,0 +1,43 @@
+{% include "admin.html" %}
+      <div class="container-fluid container">
+         <div class="container-fluid mt-5">
+            <form id="formModelo"
+               action="/coches/crear"
+               method="post"
+               enctype="multipart/form-data"
+               onsubmit="return check()">
+               <div class="form-group ">
+                  <label for="edModelo">Modelo: </label>
+                  <select required class="form-control" name="edModelo" id="edModelo">
+                     <option value="">Selecciona una opción</option>
+                     <option>Ateca</option>
+                     <option>Born</option>
+                     <option>Formentor</option>
+                     <option>Leon</option>
+                     <option>Leon e-racer</option>
+                     <option>Tavascan</option>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <label for="edAno">Año: </label>
+                  <input class="form-control" type="number" id="edAno" name="edAno" min="2000" step="1"/>
+               </div>
+               <div class="form-group">
+                  <label for="edCv">CV: </label>
+                  <input class="form-control" type="number" id="edCv" name="edCv"/>
+               </div>
+               <div class="form-group">
+                  <label for="edMotor">Motor: </label>
+                  <input class="form-control" type="text" id="edMotor" name="edMotor"/>
+               </div>
+               <div class="form-group">
+                  <label for="edPrecio">Precio: </label>
+                  <input class="form-control" type="text" id="edPrecio" name="edPrecio"/>
+               </div>
+               <div class="col text-center">
+                  <input type="submit" class="btn btn-success" value="Guardar Coche"/>
+               </div>
+            </form>
+         </div>
+      </div>
+{% include "footer.html" %}

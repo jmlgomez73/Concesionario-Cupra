@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <link rel="icon" href="../assets/logo.png" />
+      <link rel="stylesheet" href="../css/bootstrap.css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+      <link rel="stylesheet" href="../css/estilos.css" />
+      <title>Consesionario CUPRA</title>
+   </head>
+   <body>
+      <!--Botón de ir arriba-->
+      <i class="fas fa-angle-up ir-arriba" aria-hidden="true"></i>
+      <header class="container-fluid">
+         <div class="container headdder">
+            <div class="row mt-1">
+               <div class="mt-3 mb-2 col-xs-12 col-md-2 text-center">
+                  <a href="/"><img class="logo img-fluid" src="../assets/logo.png" /></a>
+               </div>
+               <nav class="arriba navbar navbar-expand-lg navbar-toggleable-md justify-content-center">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  <i class="fas fa-bars fa-3x"></i>
+                  </button>
+                  <div class="collapse navbar-collapse mr-auto justify-content-center" id="navbarTogglerDemo02">
+                     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                        <li class="nav-item active">
+                           <a class="nav_link" href="/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav_link" href="/configuracion/listado_user">Mis Configuraciones</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav_link" href="/coches/crear">Crear Vehículo</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav_link" href="/coches/listado">Gestión Vehículos</a>
+                        </li>
+                        <ul class="nav navbar-nav navbar-right">
+                           <li class="nav-item">
+                              <a class="nav_link" href="{{ login_out_url }}">
+                              {% if usr %} Logout {{usr.nickname()}} {% else %} Login {% endif %}
+                              </a>
+                           </li>
+                        </ul>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </header>
