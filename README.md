@@ -32,3 +32,21 @@ Por otro lado, el usuario administrador posee las siguientes opciones: Crear Veh
 *   Tanto el precio del coche como el precio total (coche + extras), se almacenan como Float, pero se muestran como int (por motivos estilísticos).
 
 *   Si se borra un coche sobre el cual algún usuario ha realizado una configuración, estas se borrarán.
+
+# Previews
+
+### Front-Page
+
+![](https://user-images.githubusercontent.com/67438760/118863375-1c7b6a00-b8df-11eb-9b19-89af606f581d.mp4)
+
+
+### Configurando vehículo /Modificando Configuración
+
+![](https://user-images.githubusercontent.com/67438760/118863416-2604d200-b8df-11eb-921a-719f08b6dae9.mp4)
+
+### Crear vehículo
+
+<img src="crear.png">
+
+### Gestión de vehículos
+<img src="gestion.pnf">
