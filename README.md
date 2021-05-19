@@ -46,7 +46,7 @@ Por otro lado, el usuario administrador posee las siguientes opciones: Crear Veh
 
 ### Crear vehículo
 
-<img src="crear.png">
+<img src="img/crear.png">
 
 ### Gestión de vehículos
-<img src="gestion.pnf">
+<img src="img/gestion.pnf">
