@@ -37,11 +37,11 @@ Por otro lado, el usuario administrador posee las siguientes opciones: Crear Veh
 
 ### Front-Page
 
-<p align="center"><img src="https://user-images.githubusercontent.com/67438760/118863375-1c7b6a00-b8df-11eb-9b19-89af606f581d.mp4"></p>
+<a href="https://user-images.githubusercontent.com/67438760/118863375-1c7b6a00-b8df-11eb-9b19-89af606f581d.mp4" title="Link Title"><img src="https://user-images.githubusercontent.com/67438760/118863375-1c7b6a00-b8df-11eb-9b19-89af606f581d.mp4" /></a>
 
 ### Configurando vehículo /Modificando Configuración
 
-<p align="center"><img src="https://user-images.githubusercontent.com/67438760/118863416-2604d200-b8df-11eb-921a-719f08b6dae9.mp4"></p>
+<a href="https://user-images.githubusercontent.com/67438760/118863416-2604d200-b8df-11eb-921a-719f08b6dae9.mp4" title="Link Title"><img src="https://user-images.githubusercontent.com/67438760/118863416-2604d200-b8df-11eb-921a-719f08b6dae9.mp4" /></a>
 
 ### Crear vehículo
 
